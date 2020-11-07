@@ -1,0 +1,21 @@
+<div>
+<label>Your total: {{total}}</label>
+</div>
+<div>
+<label>Daddy total: {{dealerTotal}}</label>
+<div>
+
+<div *ngIf="gameover">{{message}}</div>
+<div>
+<button (click)="hitMeDaddy()">
+  Hit me daddy
+</button>
+<button (click)="standErect()">
+  Stand erect
+</button>
+<button (click)="resetGame()">
+  RESET
+</button>
+</div>
+
+<img *ngIf="showMePorn" src="../../assets/pron.png">
