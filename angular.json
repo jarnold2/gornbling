@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gornbling"
+    }
+  },
+  "defaultProject": "gornbling",
+  "cli": {
+    "analytics": "01b8227a-a3e8-40c3-9b4c-75ae7fac50eb"
+  }
 }
