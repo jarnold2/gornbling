@@ -5,8 +5,14 @@
 <label>Daddy total: {{dealerTotal}}</label>
 <div>
 
+<div *ngIf="drewAce">
+  <p>You drew an ace!</p>
+  <button (click)="acePick(1)">1</button>
+  <button (click)="acePick(11)">11</button>
+</div>
+
 <div *ngIf="gameover">{{message}}</div>
-<div>
+<div *ngIf="!drewAce">
 <button (click)="hitMeDaddy()">
   Hit me daddy
 </button>

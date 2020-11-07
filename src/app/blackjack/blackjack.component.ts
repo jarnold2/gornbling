@@ -1,3 +1,4 @@
+import { InvokeFunctionExpr } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,6 +12,7 @@ export class BlackjackComponent implements OnInit {
   gameover: boolean;
   message: string;
   showMePorn: boolean;
+  drewAce: boolean;
 
   constructor() { }
 
@@ -23,14 +25,22 @@ export class BlackjackComponent implements OnInit {
 
   hitMeDaddy()
   {
-    this.total += this.getCard(1, 11);
-    if(this.total > 21) {
-      this.gameover = true;
-      this.message = "YOU LOSE BITCH!";
-    }
-    else if (this.total === 21)
+    let card = this.getCard(1, 11);
+    if(card === 1)
     {
-      this.standErect()
+      this.drewAce = true;
+    }
+    else {
+      this.drewAce = false;
+      this.total += card;
+      if(this.total > 21) {
+        this.gameover = true;
+        this.message = "YOU LOSE BITCH!";
+      }
+      else if (this.total === 21)
+      {
+        this.standErect()
+      }
     }
   }
 
@@ -67,6 +77,21 @@ export class BlackjackComponent implements OnInit {
     this.gameover = false;
     this.message = "";
     this.showMePorn = false;
+  }
+
+  acePick(amount: number) {
+    this.total += amount;
+
+    if(this.total > 21) {
+      this.gameover = true;
+      this.message = "YOU LOSE BITCH!";
+    }
+    else if (this.total === 21)
+    {
+      this.standErect()
+    }
+
+    this.drewAce = false;
   }
 
   getCard(min, max) {
