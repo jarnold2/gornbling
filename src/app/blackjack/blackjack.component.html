@@ -13,10 +13,10 @@
 
 <div *ngIf="gameover">{{message}}</div>
 <div *ngIf="!drewAce">
-<button (click)="hitMeDaddy()">
+<button (click)="hitMeDaddy()" [disabled]="gameover">
   Hit me daddy
 </button>
-<button (click)="standErect()">
+<button (click)="standErect()" [disabled]="gameover">
   Stand erect
 </button>
 <button (click)="resetGame()">
