@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   { path: 'bj', component: BlackjackComponent },
   { path: '', component: HomeComponent },
-  { path: '**', component: HomeComponent }
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
